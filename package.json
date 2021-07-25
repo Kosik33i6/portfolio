@@ -4,11 +4,19 @@
   "description": "Kos Krzysztof - Portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init-project": "npm i && npm-run-all init:*",
+    "init:dirs": "mkdirp dist src/sass src/vendor src/images src/js src/db",
+    "init:files": "touch README.md src/index.html src/sass/style.scss src/js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "init:gitignore:custom": "echo \"dist\" >> .gitignore"
   },
   "keywords": [
     "portfolio"
   ],
   "author": "Kos Krzysztof",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5"
+  }
 }
