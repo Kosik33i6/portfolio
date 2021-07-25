@@ -6,9 +6,25 @@
   "scripts": {
     "init-project": "npm i && npm-run-all init:*",
     "init:dirs": "mkdirp dist src/sass src/vendor src/images src/js src/db",
-    "init:files": "touch README.md src/index.html src/sass/style.scss src/js/script.js",
-    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
-    "init:gitignore:custom": "echo \"dist\" >> .gitignore"
+    "init:files": "touch README.md .editorconfig src/index.html src/sass/style.scss src/js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/Kosik33i6/editor-config/main/.editorconfig -o .gitignore",
+    "init:gitignore:custom": "echo \"dist\" >> .gitignore",
+    "init:editorconfig": "curl https://raw.githubusercontent.com/Kosik33i6/editor-config/main/.editorconfig?token=AORRJ4H34PGAOKUBACBKOVLA7WLH4 -o .editorconfig",
+    "test": "npm-run-all build:* test:*",
+    "test:html": "html-validate src/*.html",
+    "test:scss": "stylelint src/sass/",
+    "test:js": "eslint --fix src/js/",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf dist && mkdirp dist",
+    "build:copy": "copyfiles -a -u 1 -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" dist",
+    "build:sass": "node-sass --output-style compact -o dist/css src/sass",
+    "build:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "build-dev": "npm-run-all build-dev:sass build:autoprefixer",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o dist/css src/sass",
+    "watch": "npm-run-all build build-dev -p watch:*",
+    "watch:browsersync": "browser-sync start --server dist --files \"dist/**/*\" --ignore \"dist/db/**/*\"",
+    "watch:sassprefixer": "onchange \"src/sass/**/*.scss\" -- npm run build-dev",
+    "watch:copy": "onchange -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" -- copyfiles -a -u 1 {{changed}} dist"
   },
   "keywords": [
     "portfolio"
@@ -16,7 +32,20 @@
   "author": "Kos Krzysztof",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "browser-sync": "^2.26.3",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.31.0",
+    "globstar": "^1.0.0",
+    "html-validate": "^5.2.0",
     "mkdirp": "^1.0.4",
-    "npm-run-all": "^4.1.5"
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-scss": "^3.20.1"
   }
 }
