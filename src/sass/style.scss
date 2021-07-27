@@ -1,7 +1,10 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import './abstract/mixins';
+@import './abstract/variables';
+
+@import './base/animations';
+@import './base/base';
+@import './base/typography';
+
+@import './components/hero-image';
+
+@import './layout/header';
