@@ -15,6 +15,7 @@
   &__title-container {
     flex-basis: 38%;
     position: relative;
+
     &::before {
       content: '';
       @include absCenter(35%, 10%);
@@ -23,17 +24,24 @@
       background-image: linear-gradient(to bottom, $color-tertiary-light, $color-tertiary-dark);
       border-radius: 50%;
       z-index: 1;
+      background: linear-gradient(to bottom, $color-tertiary-dark, $color-primary-light);
+      background-size: 200% 200%;
+      animation: gradient 5s ease infinite;
     }
+
     &::after {
       content: '';
       @include absCenter(65%, 80%);
       width: $header-circle-diameter;
       height: $header-circle-diameter;
-      background-image: linear-gradient(to bottom, $color-primary-dark, $color-primary-light);
+      background-image: linear-gradient(to top, $color-secondary-dark, $color-tertiary-dark);
+      background-size: 200% 200%;
+      animation: gradient 5s ease infinite;
       border-radius: 50%;
       z-index: 1;
     }
   }
+
 
   &__title-container-inner {
     @include absCenter;

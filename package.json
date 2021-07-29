@@ -6,7 +6,7 @@
   "scripts": {
     "init-project": "npm i && npm-run-all init:*",
     "init:dirs": "mkdirp dist src/sass src/vendor src/images src/js src/db",
-    "init:files": "touch README.md .editorconfig src/index.html src/sass/style.scss src/js/script.js",
+    "init:files": "touch README.md .editorconfig src/index.html src/sass/style.scss src/js/index.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/Kosik33i6/editor-config/main/.editorconfig -o .gitignore",
     "init:gitignore:custom": "echo \"dist\" >> .gitignore",
     "init:editorconfig": "curl https://raw.githubusercontent.com/Kosik33i6/editor-config/main/.editorconfig?token=AORRJ4H34PGAOKUBACBKOVLA7WLH4 -o .editorconfig",

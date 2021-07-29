@@ -6,10 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kos Krzysztof - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+
+    <div class="navigation">
+        <div class="navigation__logo-container">
+            <div class="logo"></div>
+        </div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#header" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="#about" class="navigation__link">About me</a></li>
+                <li class="navigation__item"><a href="#skill" class="navigation__link">My skills</a></li>
+                <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
+                <li class="navigation__item"><a href="contact" class="navigation__link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header" id="header">
+        <div class="header__container">
+
+            <div class="header__title-container">
+                <div class="header__title-container-inner">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary__description">Hello, my name is</span>
+                        <span class="heading-primary--title">Kos Krzysztof</span>
+                        <span class="heading-primary--subtitle">Front-End Developer</span>
+                    </h1>
+                </div>
+                <div class="circle"></div>
+            </div>
+
+            <div class="header__image-container">
+                <div class="hero-image">
+                    <img class="hero-image__inner" src="images/header-image-2.svg" alt="header-image">
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
