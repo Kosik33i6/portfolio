@@ -4,9 +4,18 @@
   left: 0;
   width: 100%;
   height: $nav-height;
-  display: flex;
-  justify-content: space-between;
-  background-color: $color-primary-dark;
+  background-color: var(--bg-color-dark);
+  z-index: 1000;
+
+  &__inner {
+    @include absCenter(50%, 50%);
+    display: flex;
+    justify-content: space-between;
+    height: $nav-inner-height;
+    width: $nav-inner-width;
+    margin: auto;
+    border-radius: $border-radius-medium;
+  }
 
   &__logo-container {
     flex-basis: 30%;
@@ -19,9 +28,8 @@
   }
 
   &__list {
-
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
     height: 100%;
@@ -30,9 +38,39 @@
   &__item {
     flex-basis: 19%;
     cursor: pointer;
+    max-height: 100%;
+    border-radius: $border-radius-medium;
+    // box-shadow: inset 1px 1px 0 1px lighten(var(--bg-color-dark),  15%), inset -1px -1px 0 1px darken(var(--bg-color-dark), 10%);
+    border-radius: $border-radius-medium;
+    // border-radius: calc(#{$nav-inner-height} / 2);
+    position: relative;
+    @include border;
+    background-color: rgba($color-extra-light, .1);
+    transition: all .3s ease;
+    overflow: hidden;
+
     &:hover {
-      background-color: $color-primary-medium;
+      // box-shadow: inset 2px 2px 0 1px lighten(var(--bg-color-dark),  15%), inset -2px -2px 0 1px darken(var(--bg-color-dark), 15%);
+      transform: translateY(-2px) scale(1.01);
     }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      background-color: rgba($color-extra-light, .7);
+      transform: skewX(45deg) translateX(25rem);
+      transition: all .3s ease;
+    }
+
+    &:hover::before {
+      transform: skew(45deg) translateX(-15rem);
+    }
+
   }
 
   &__link {
@@ -42,7 +80,8 @@
     text-transform: uppercase;
     font-size: 2rem;
     color: $color-extra-light;
-    line-height: $nav-height;
     text-align: center;
+    line-height: $nav-inner-height;
+    color: inherit;
   }
 }

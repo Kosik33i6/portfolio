@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: $text-color;
+  color: $text-color-light;
 }
 
 .heading-primary {
@@ -42,4 +42,12 @@ body {
     font-style: italic;
     font-weight: 300;
   }
+}
+
+
+.heading-secondary {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: .4rem;
+  text-align: center;
 }

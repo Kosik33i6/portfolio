@@ -1,0 +1,77 @@
+.main {
+  overflow: hidden;
+}
+
+.section-about {
+  background-color: $color-dark-3;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  position: relative;
+
+  &__title-container {
+    position: relative;
+    margin: 2rem auto 4rem;
+    padding: 1rem;
+    width: 25%;
+    background-image: linear-gradient(to right bottom, var(--bg-color-light), var(--bg-color-medium), var(--bg-color-dark));
+    background-color: rgba($color-extra-light, .1);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      width: 15%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba($color-extra-light, .7);
+      transform: skewX(45deg)  translateX(55rem);
+      transition: all .3s ease;
+    }
+
+    &:hover::before {
+      transform: skewX(45deg)  translateX(-15rem);
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-image: linear-gradient(to right bottom, var(--bg-color-light), var(--bg-color-dark));
+    width: 70%;
+    z-index: 1;
+  }
+
+  &__title-container,
+  &__row {
+    @include border;
+    border-radius: $border-radius-medium;
+  }
+
+  &__image-container,
+  &__description-container {
+    flex-basis: 48%;
+    background-color: rgba($color-extra-light, .1);
+  }
+
+  &__image-container {
+    padding: 3rem;
+    border-right: 1px solid rgba($color-extra-light, .2);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__description-container {
+    backdrop-filter: blur(25px);
+    border-left: 1px solid rgba($color-extra-light, .2);
+  }
+
+  // &__sphare-container {
+  //   // z-index: -1;
+  //   @include absCenter(calc(#{$sphere-diameter-big} / -2), calc(100% - #{$sphere-diameter-big} / 2), false);
+  // }
+}

@@ -1,0 +1,159 @@
+.theme-widget {
+  position: relative;
+  width: $widget-theme-length;
+  height: calc(#{$widget-theme-length} * 3);
+
+  &__settings-btn-box {
+    @include absCenter(calc(-#{$widget-theme-btn-length} / 2), calc(100% - #{$widget-theme-btn-length}), false);
+    height: $widget-theme-btn-length;
+    width: $widget-theme-btn-length;
+    @include border;
+    border-radius: $border-radius-medium;
+    background-color: rgba($color-extra-light, .2);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    overflow: hidden;
+    // transition: top .5s, z-index 0s, transform .5s;
+    // transition-delay: .5s, .5s;
+
+    // &:hover {
+    //   transition-delay: 0s, .5s;
+    // }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      background-color: rgba($color-extra-light, .5);
+      transform: skewX(45deg) translateX(calc(#{$widget-theme-btn-length} * 1.5));
+      transition: all .3s ease;
+    }
+
+    &:hover::before {
+      transform: skew(45deg) translateX(-$widget-theme-btn-length);
+    }
+  }
+
+  &__settings-btn {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    line-height: $widget-theme-btn-length;
+    transform: rotate(0deg);
+    transition: all .4s linear;
+
+    &--rotate {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__options-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include border;
+    border-top-left-radius: $border-radius-medium;
+    border-bottom-left-radius: $border-radius-medium;
+    background-color: rgba($color-extra-light, .2);
+    backdrop-filter: blur(10px);
+    transform: translateX($widget-theme-length);
+    transition: transform .4s ease;
+
+    &--move-from-right {
+      transform: translateX(0);
+    }
+  }
+
+  &__radio-btn-box {
+    flex-basis: 20%;
+    position: relative;
+
+    input[type='radio'] {
+      @include absCenter();
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      outline: none;
+      appearance: none;
+      transition: all .2s ease;
+      overflow: hidden;
+
+      &:hover {
+        box-shadow: 1px 1px 0 1px rgba($color-extra-dark, .15), -1px -1px 0 1px  rgba($color-extra-light, .15);
+        transform: scale(1.01) translate(-50%, -50%);
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0%;
+        background-color: rgba($color-extra-light, .7);
+        transform: skewX(45deg) translateX(10rem);
+        transition: all .3s ease;
+      }
+
+      &:hover::before {
+        transform: skew(45deg) translateX(-10rem);
+      }
+
+      &:checked {
+        box-shadow: inset 2px 2px 0 2px rgba($color-extra-dark, .15), inset -2px -2px 0 2px  rgba($color-extra-light, .15);
+        transform: scale(.99) translate(-50%, -50%);
+        border: 3px solid rgba($color-extra-light, .7);
+      }
+    }
+
+    input#primary-theme {
+      background-image: linear-gradient(to bottom, $color-primary-dark, $color-primary-medium, $color-primary-light);
+    }
+
+    input#secondary-theme {
+      background-image: linear-gradient(to bottom, $color-secondary-dark, $color-secondary-medium, $color-secondary-light);
+    }
+
+    input#tertiary-theme {
+      background-image: linear-gradient(to bottom, $color-tertiary-dark, $color-tertiary-medium, $color-tertiary-light);
+    }
+
+    input#quaternary-theme {
+      background-image: linear-gradient(to bottom, $color-quaternary-dark, $color-quaternary-medium, $color-quaternary-light);
+    }
+  }
+
+  &--visible {
+    .theme-widget__settings-btn-box {
+      z-index: 0;
+    }
+  }
+
+  &--active {
+    .theme-widget__settings-btn-box {
+      z-index: 0;
+      transition: top .5s, z-index 0s, transform .5s;
+      transition-delay: .5s, .5s, 0s;
+
+      &:hover {
+        transition-delay: 0s, .5s, .5s;
+        top: -$widget-theme-btn-length;
+        transform: translateY(calc(#{$widget-theme-btn-length} / 2));
+        z-index: 1;
+      }
+    }
+  }
+}

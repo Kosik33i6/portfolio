@@ -1,0 +1,19 @@
+.sphere {
+  border-radius: 50%;
+  background: radial-gradient(circle at 70px 70px, transparent 40%, $color-extra-light);
+  // background: radial-gradient(circle at 70px 70px, var( --bg-color-4), var( --bg-color-5));
+
+  &--theme {
+    background: radial-gradient(circle at 70px 70px, var(--bg-color-light),  var(--bg-color-medium),  var(--bg-color-dark));
+  }
+
+  &--medium {
+    width: $sphere-diameter-medium;
+    height: $sphere-diameter-medium;
+  }
+
+  &--big {
+    width: $sphere-diameter-big;
+    height: $sphere-diameter-big;
+  }
+}

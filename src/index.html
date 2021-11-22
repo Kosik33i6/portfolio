@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="primary">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kos Krzysztof - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
 
     <div class="navigation">
-        <div class="navigation__logo-container">
-            <div class="logo"></div>
+        <div class="navigation__inner">
+            <div class="navigation__logo-container">
+                <div class="logo"></div>
+            </div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#header" class="navigation__link">Home</a></li>
+                    <li class="navigation__item"><a href="#about" class="navigation__link">About me</a></li>
+                    <li class="navigation__item"><a href="#skill" class="navigation__link">My skills</a></li>
+                    <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
+                    <li class="navigation__item"><a href="#contact" class="navigation__link">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="#header" class="navigation__link">Home</a></li>
-                <li class="navigation__item"><a href="#about" class="navigation__link">About me</a></li>
-                <li class="navigation__item"><a href="#skill" class="navigation__link">My skills</a></li>
-                <li class="navigation__item"><a href="#portfolio" class="navigation__link">Portfolio</a></li>
-                <li class="navigation__item"><a href="contact" class="navigation__link">Contact</a></li>
-            </ul>
-        </nav>
     </div>
 
     <header class="header" id="header">
         <div class="header__container">
 
-            <div class="header__title-container">
-                <div class="header__title-container-inner">
+            <div class="header__info-container">
+                <div class="header__title-container">
                     <h1 class="heading-primary">
                         <span class="heading-primary__description">Hello, my name is</span>
                         <span class="heading-primary--title">Kos Krzysztof</span>
                         <span class="heading-primary--subtitle">Front-End Developer</span>
                     </h1>
                 </div>
-                <div class="circle"></div>
+                <div class="header__icons-container">
+                    <!-- ul.icon-list>li* -->
+                    <div class="header__icon-box">
+                        <i class='bx bxl-html5'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-css3'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-sass'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-less'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-javascript'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-react'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-git'></i>
+                    </div>
+                    <div class="header__icon-box">
+                        <i class='bx bxl-jquery'></i>
+                    </div>
+                    <!-- <div class="header__icon-box">
+                        <box-icon type="logo" name="html5"></box-icon>
+                    </div> -->
+                </div>
             </div>
 
             <div class="header__image-container">
@@ -47,8 +80,60 @@
             </div>
 
         </div>
+
+        <div class="header__sphare-container">
+            <div class="sphere sphere--medium"></div>
+        </div>
+
+        <div class="header__theme-widget-container">
+            <div class="theme-widget">
+                <div class="theme-widget__settings-btn-box">
+                    <i class="fas fa-cog theme-widget__settings-btn"></i>
+                </div>
+                <div class="theme-widget__options-box">
+
+                    <div class="theme-widget__radio-btn-box">
+                        <input type="radio" id="primary-theme" name="color-theme" value="primary" checked>
+                        <label for="primary-theme"></label>
+                    </div>
+
+                    <div class="theme-widget__radio-btn-box">
+                        <input type="radio" id="secondary-theme" name="color-theme" value="secondary">
+                        <label for="secondary-theme"></label>
+                    </div>
+
+                    <div class="theme-widget__radio-btn-box">
+                        <input type="radio" id="tertiary-theme" name="color-theme" value="tertiary">
+                        <label for="tertiary-theme"></label>
+                    </div>
+
+                    <div class="theme-widget__radio-btn-box">
+                        <input type="radio" id="quaternary-theme" name="color-theme" value="quaternary">
+                        <label for="quaternary-theme"></label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </header>
-    <script src="js/index.js"></script>
+    <main class="main">
+        <section class="section-about">
+            <div class="section-about__title-container">
+                <h2 class="heading-secondary">About Me</h2>
+            </div>
+            <div class="section-about__row">
+                <div class="section-about__image-container">
+                    <img src="images/about-1.svg" alt="">
+                </div>
+                <div class="section-about__description-container">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque impedit quisquam voluptates quos sit nihil rem hic sed, natus enim debitis, quo ab ipsam ipsum autem magni, blanditiis praesentium est.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js" type="module"></script>
 </body>
 
 </html>

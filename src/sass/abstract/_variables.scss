@@ -25,9 +25,66 @@ $color-dark-3: #333333;
 $color-extra-light: #fff;
 $color-extra-dark: #000;
 
-$text-color: #3a3a3a;
+$text-color-dark: #3a3a3a;
+$text-color-light: #fdfdfd;
 
-$header-circle-diameter: 25rem;
+$sphere-diameter-small: 25rem;
+$sphere-diameter-medium: 30rem;
+$sphere-diameter-big: 35rem;
 
-$nav-height: 8rem;
+$nav-height: 6rem;
+$nav-inner-height: 5rem;
+$nav-inner-width: 99%;
 
+$widget-theme-length: 10rem;
+$widget-theme-btn-length: 9rem;
+
+$border-radius-medium: .5rem;
+
+:root[data-theme="primary"] {
+  --bg-color-light: #{$color-primary-light};
+  --bg-color-medium: #{$color-primary-medium};
+  --bg-color-dark: #{$color-primary-dark};
+
+  --bg-color-1: #{$color-secondary-light};
+  --bg-color-2: #{$color-secondary-medium};
+  --bg-color-3: #{$color-secondary-dark};
+  --bg-color-4: #{$color-tertiary-light};
+  --bg-color-5: #{$color-tertiary-dark};
+}
+
+:root[data-theme="secondary"] {
+  --bg-color-light: #{$color-secondary-light};
+  --bg-color-medium: #{$color-secondary-medium};
+  --bg-color-dark: #{$color-secondary-dark};
+
+  --bg-color-1: #{$color-tertiary-light};
+  --bg-color-2: #{$color-tertiary-medium};
+  --bg-color-3: #{$color-tertiary-dark};
+  --bg-color-4: #{$color-primary-light};
+  --bg-color-5: #{$color-primary-dark};
+}
+
+:root[data-theme="tertiary"] {
+  --bg-color-light: #{$color-tertiary-light};
+  --bg-color-medium: #{$color-tertiary-medium};
+  --bg-color-dark: #{$color-tertiary-dark};
+
+  --bg-color-1: #{$color-secondary-light};
+  --bg-color-2: #{$color-secondary-medium};
+  --bg-color-3: #{$color-secondary-dark};
+  --bg-color-4: #{$color-primary-light};
+  --bg-color-5: #{$color-primary-dark};
+}
+
+:root[data-theme="quaternary"] {
+  --bg-color-light: #{$color-quaternary-light};
+  --bg-color-medium: #{$color-quaternary-medium};
+  --bg-color-dark: #{$color-quaternary-dark};
+
+  --bg-color-1: #{$color-primary-light};
+  --bg-color-2: #{$color-primary-medium};
+  --bg-color-3: #{$color-primary-dark};
+  --bg-color-4: #{$color-secondary-light};
+  --bg-color-5: #{$color-secondary-dark};
+}
