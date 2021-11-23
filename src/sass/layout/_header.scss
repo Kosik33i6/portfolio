@@ -4,7 +4,7 @@
   background-image: linear-gradient(135deg, var(--bg-color-dark), var(--bg-color-medium), var(--bg-color-light));
   position: relative;
   overflow: hidden;
-  transition: all .3s ease;
+  transition: all 1s ease;
 
   &::before {
     content: '';
