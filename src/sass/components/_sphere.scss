@@ -1,10 +1,83 @@
 .sphere {
   border-radius: 50%;
-  background: radial-gradient(circle at 70px 70px, transparent 40%, $color-extra-light);
+
   // background: radial-gradient(circle at 70px 70px, var( --bg-color-4), var( --bg-color-5));
 
-  &--theme {
-    background: radial-gradient(circle at 70px 70px, var(--bg-color-light),  var(--bg-color-medium),  var(--bg-color-dark));
+  // &--theme {
+  //   background: radial-gradient(
+  //     circle at 70px 70px,
+  //     var(--bg-color-light),
+  //     var(--bg-color-medium),
+  //     var(--bg-color-dark)
+  //   );
+  // }
+  &--theme-1 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-3) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-2 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-2) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-3 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-1) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-4 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-5) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-5 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-4) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-6 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-light) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-7 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-medium) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--theme-8 {
+    background: radial-gradient(
+      circle at 70px 70px,
+      var(--bg-color-dark) 30%,
+      $color-extra-light
+    );
+  }
+
+  &--small {
+    width: $sphere-diameter-small;
+    height: $sphere-diameter-small;
   }
 
   &--medium {

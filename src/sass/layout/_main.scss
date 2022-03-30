@@ -4,42 +4,83 @@
 
 .section-about {
   background-color: $color-dark-3;
-  padding-bottom: 4rem;
-  padding-top: 2rem;
-  position: relative;
+
+  &__container {
+    padding: 5rem 4rem;
+    position: relative;
+    height: 80rem;
+  }
+
+  &__sphare-container {
+    &:nth-of-type(3) {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    &:nth-of-type(4) {
+      position: absolute;
+      top: calc(-#{$sphere-diameter-big} / 2);
+      right: calc(-#{$sphere-diameter-big} / 2);
+    }
+
+    &:nth-of-type(5) {
+      position: absolute;
+      top: 0;
+      left: 60%;
+    }
+
+    &:nth-of-type(6) {
+      position: absolute;
+      right: 7rem;
+      bottom: 7rem;
+    }
+  }
 
   &__title-container {
-    position: relative;
-    margin: 2rem auto 4rem;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
     padding: 1rem;
-    width: 25%;
-    background-image: linear-gradient(to right bottom, var(--bg-color-light), var(--bg-color-medium), var(--bg-color-dark));
-    background-color: rgba($color-extra-light, .1);
+    width: 30%;
+    // background-image: linear-gradient(
+    //   to right bottom,
+    //   var(--bg-color-light),
+    //   var(--bg-color-medium),
+    //   var(--bg-color-dark)
+    // );
+    backdrop-filter: blur(15px);
+    background-color: rgba($color-extra-light, 0.1);
     overflow: hidden;
+    z-index: 1;
 
     &::before {
-      content: '';
+      content: "";
       width: 15%;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      background-color: rgba($color-extra-light, .7);
-      transform: skewX(45deg)  translateX(55rem);
-      transition: all .3s ease;
+      background-color: rgba($color-extra-light, 0.7);
+      transform: skewX(45deg) translateX(60rem);
+      transition: all 0.3s ease;
     }
 
     &:hover::before {
-      transform: skewX(45deg)  translateX(-15rem);
+      transform: skewX(45deg) translateX(-15rem);
     }
   }
 
   &__row {
+    @include absCenter(50%, 50%, true);
+    height: 65%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
+    backdrop-filter: blur(15px);
     margin: 0 auto;
-    background-image: linear-gradient(to right bottom, var(--bg-color-light), var(--bg-color-dark));
-    width: 70%;
     z-index: 1;
   }
 
@@ -52,12 +93,12 @@
   &__image-container,
   &__description-container {
     flex-basis: 48%;
-    background-color: rgba($color-extra-light, .1);
+    background-color: rgba($color-extra-light, 0.1);
   }
 
   &__image-container {
     padding: 3rem;
-    border-right: 1px solid rgba($color-extra-light, .2);
+    border-right: 1px solid rgba($color-extra-light, 0.2);
 
     img {
       height: 100%;
@@ -67,7 +108,7 @@
 
   &__description-container {
     backdrop-filter: blur(25px);
-    border-left: 1px solid rgba($color-extra-light, .2);
+    border-left: 1px solid rgba($color-extra-light, 0.2);
   }
 
   // &__sphare-container {
